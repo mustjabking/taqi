@@ -1,331 +1,735 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.TAQI STUDIO - Game Development Studio</title>
-    <!-- Favicon / Web Icon -->
-    <link rel="icon" href="https://yt3.ggpht.com/6NkGrylqLe2FAxYaq-VQ1vBP_z0FwDAK9RMJ0Bql13mJur1H8yfBxvF3TXs0Jr0GLv4p839qC_wN=s258-c-fcrop64=1,00000000ffffffff-rw-nd-v1" type="image/x-icon">
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --dark-bg: #0d0f18;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --text-color: #ffffff;
-            --text-muted: #a0a5b5;
-        }
+<!-- ============================================================
+     M.TAQI-STUDIO  |  CREATED BY MUHAMMAD TAQI
+     200 META TAGS
+     ============================================================ -->
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<!-- ============ 1 – 15  :  CORE / HTTP-EQUIV ============ -->
+<meta charset="UTF-8">                                                                              <!-- 1 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">                                                <!-- 2 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">            <!-- 3 -->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">                                  <!-- 4 -->
+<meta http-equiv="content-language" content="en">                                                     <!-- 5 -->
+<meta http-equiv="cache-control" content="public, max-age=31536000">                                 <!-- 6 -->
+<meta http-equiv="expires" content="Fri, 31 Dec 2027 23:59:59 GMT">                                  <!-- 7 -->
+<meta http-equiv="pragma" content="public">                                                          <!-- 8 -->
+<meta http-equiv="x-dns-prefetch-control" content="on">                                              <!-- 9 -->
+<meta name="referrer" content="strict-origin-when-cross-origin">                                     <!-- 10 -->
+<meta http-equiv="default-style" content="M.TAQI-STUDIO">                                            <!-- 11 -->
+<meta name="title" content="M.TAQI-STUDIO — AI, Web, Game &amp; Software Development">                 <!-- 12 -->
+<meta name="description" content="M.TAQI-STUDIO — Official studio of Muhammad Taqi. AI, Web, Game, App &amp; Software development. 2D stickman games, tools, websites and AI models."> <!-- 13 -->
+<meta name="keywords" content="M.TAQI-STUDIO, Muhammad Taqi, LYRAMOON, AVELIA, NEXURA, DEATH NOVA, AI development, web development, game development, software development, stickman games, 2D games, Python, JavaScript, HTML, CSS, C++, C#, Java"> <!-- 14 -->
+<meta name="author" content="Muhammad Taqi">                                                          <!-- 15 -->
 
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            background: radial-gradient(circle at top right, #1a1e36, #0d0f18);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+<!-- ============ 16 – 40  :  ROBOTS / CRAWLERS ============ -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"> <!-- 16 -->
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">              <!-- 17 -->
+<meta name="google" content="notranslate">                                                           <!-- 18 -->
+<meta name="bingbot" content="index, follow">                                                        <!-- 19 -->
+<meta name="slurp" content="index, follow">                                                          <!-- 20 -->
+<meta name="yandex" content="index, follow">                                                         <!-- 21 -->
+<meta name="baiduspider" content="index, follow">                                                    <!-- 22 -->
+<meta name="duckduckbot" content="index, follow">                                                    <!-- 23 -->
+<meta name="msnbot" content="index, follow">                                                         <!-- 24 -->
+<meta name="teoma" content="index, follow">                                                          <!-- 25 -->
+<meta name="googlebot-news" content="index, follow">                                                 <!-- 26 -->
+<meta name="googlebot-image" content="index, follow">                                                <!-- 27 -->
+<meta name="googlebot-video" content="index, follow">                                                <!-- 28 -->
+<meta name="adsbot-google" content="index, follow">                                                  <!-- 29 -->
+<meta name="mediapartners-google" content="index, follow">                                           <!-- 30 -->
+<meta name="applebot" content="index, follow">                                                       <!-- 31 -->
+<meta name="petalbot" content="index, follow">                                                       <!-- 32 -->
+<meta name="ahrefsbot" content="index, follow">                                                      <!-- 33 -->
+<meta name="semrushbot" content="index, follow">                                                     <!-- 34 -->
+<meta name="mj12bot" content="index, follow">                                                        <!-- 35 -->
+<meta name="ia_archiver" content="index, follow">                                                    <!-- 36 -->
+<meta name="archive.org_bot" content="index, follow">                                                <!-- 37 -->
+<meta name="rogerbot" content="index, follow">                                                       <!-- 38 -->
+<meta name="exabot" content="index, follow">                                                         <!-- 39 -->
+<meta name="facebot" content="index, follow">                                                        <!-- 40 -->
 
-        /* Header / Navbar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(13, 15, 24, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+<!-- ============ 41 – 65  :  MOBILE / PWA / BROWSER ============ -->
+<meta name="mobile-web-app-capable" content="yes">                                                   <!-- 41 -->
+<meta name="apple-mobile-web-app-capable" content="yes">                                             <!-- 42 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">                      <!-- 43 -->
+<meta name="apple-mobile-web-app-title" content="M.TAQI-STUDIO">                                     <!-- 44 -->
+<meta name="apple-touch-fullscreen" content="yes">                                                   <!-- 45 -->
+<meta name="application-name" content="M.TAQI-STUDIO">                                               <!-- 46 -->
+<meta name="msapplication-TileColor" content="#05050a">                                              <!-- 47 -->
+<meta name="msapplication-TileImage" content="icon.png">                                             <!-- 48 -->
+<meta name="msapplication-config" content="browserconfig.xml">                                       <!-- 49 -->
+<meta name="msapplication-tooltip" content="M.TAQI-STUDIO by Muhammad Taqi">                         <!-- 50 -->
+<meta name="msapplication-starturl" content="/">                                                     <!-- 51 -->
+<meta name="msapplication-navbutton-color" content="#8b5cf6">                                        <!-- 52 -->
+<meta name="msapplication-window" content="width=1200;height=800">                                   <!-- 53 -->
+<meta name="msapplication-task" content="name=M.TAQI-STUDIO;action-uri=/;icon-uri=icon.png">         <!-- 54 -->
+<meta name="handheldfriendly" content="true">                                                        <!-- 55 -->
+<meta name="MobileOptimized" content="width">                                                        <!-- 56 -->
+<meta name="format-detection" content="telephone=no, address=no, email=no">                          <!-- 57 -->
+<meta name="theme-color" content="#8b5cf6">                                                          <!-- 58 -->
+<meta name="color-scheme" content="dark light">                                                      <!-- 59 -->
+<meta name="supported-color-schemes" content="dark light">                                           <!-- 60 -->
+<meta name="screen-orientation" content="portrait">                                                  <!-- 61 -->
+<meta name="x5-orientation" content="portrait">                                                      <!-- 62 -->
+<meta name="x5-fullscreen" content="true">                                                           <!-- 63 -->
+<meta name="x5-page-mode" content="app">                                                             <!-- 64 -->
+<meta name="browsermode" content="application">                                                      <!-- 65 -->
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+<!-- ============ 66 – 95  :  OPEN GRAPH ============ -->
+<meta property="og:type" content="website">                                                          <!-- 66 -->
+<meta property="og:site_name" content="M.TAQI-STUDIO">                                               <!-- 67 -->
+<meta property="og:title" content="M.TAQI-STUDIO — AI, Web, Game &amp; Software Development">         <!-- 68 -->
+<meta property="og:description" content="Official studio of Muhammad Taqi. AI, web, game, app and software development. Creator of DEATH NOVA."> <!-- 69 -->
+<meta property="og:url" content="https://taqi.oneapp.dev">                                           <!-- 70 -->
+<meta property="og:image" content="https://taqi.oneapp.dev/icon.png">                                <!-- 71 -->
+<meta property="og:image:url" content="https://taqi.oneapp.dev/icon.png">                            <!-- 72 -->
+<meta property="og:image:secure_url" content="https://taqi.oneapp.dev/icon.png">                     <!-- 73 -->
+<meta property="og:image:type" content="image/png">                                                  <!-- 74 -->
+<meta property="og:image:width" content="1200">                                                      <!-- 75 -->
+<meta property="og:image:height" content="630">                                                      <!-- 76 -->
+<meta property="og:image:alt" content="M.TAQI-STUDIO logo">                                          <!-- 77 -->
+<meta property="og:locale" content="en_US">                                                          <!-- 78 -->
+<meta property="og:locale:alternate" content="ur_PK">                                                <!-- 79 -->
+<meta property="og:determiner" content="the">                                                        <!-- 80 -->
+<meta property="og:audio" content="https://taqi.oneapp.dev/audio/intro.mp3">                         <!-- 81 -->
+<meta property="og:video" content="https://www.youtube.com/@M.TAQI-STUDIO">                          <!-- 82 -->
+<meta property="og:video:url" content="https://www.youtube.com/@M.TAQI-STUDIO">                      <!-- 83 -->
+<meta property="og:video:secure_url" content="https://www.youtube.com/@M.TAQI-STUDIO">               <!-- 84 -->
+<meta property="og:video:type" content="text/html">                                                  <!-- 85 -->
+<meta property="og:video:width" content="1280">                                                      <!-- 86 -->
+<meta property="og:video:height" content="720">                                                      <!-- 87 -->
+<meta property="og:video:alt" content="M.TAQI-STUDIO YouTube channel">                               <!-- 88 -->
+<meta property="og:updated_time" content="2026-01-01T00:00:00+00:00">                                <!-- 89 -->
+<meta property="og:see_also" content="https://www.youtube.com/@LYRAMOON-STUDIO">                     <!-- 90 -->
+<meta property="og:email" content="contact@mtaqi.studio">                                            <!-- 91 -->
+<meta property="og:phone_number" content="+92-000-0000000">                                          <!-- 92 -->
+<meta property="og:country_name" content="Pakistan">                                                 <!-- 93 -->
+<meta property="og:ttl" content="604800">                                                            <!-- 94 -->
+<meta property="article:author" content="Muhammad Taqi">                                             <!-- 95 -->
 
-        .brand img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid var(--primary);
-            object-fit: cover;
-        }
+<!-- ============ 96 – 110  :  TWITTER / X CARD ============ -->
+<meta name="twitter:card" content="summary_large_image">                                             <!-- 96 -->
+<meta name="twitter:site" content="@MTAQISTUDIO">                                                    <!-- 97 -->
+<meta name="twitter:site:id" content="0000000000">                                                   <!-- 98 -->
+<meta name="twitter:creator" content="@MTAQISTUDIO">                                                 <!-- 99 -->
+<meta name="twitter:creator:id" content="0000000000">                                                <!-- 100 -->
+<meta name="twitter:title" content="M.TAQI-STUDIO — AI, Web, Game &amp; Software Development">        <!-- 101 -->
+<meta name="twitter:description" content="Official studio of Muhammad Taqi. AI, web, game, app &amp; software development."> <!-- 102 -->
+<meta name="twitter:image" content="https://taqi.oneapp.dev/icon.png">                               <!-- 103 -->
+<meta name="twitter:image:alt" content="M.TAQI-STUDIO logo">                                         <!-- 104 -->
+<meta name="twitter:image:width" content="1200">                                                     <!-- 105 -->
+<meta name="twitter:image:height" content="630">                                                     <!-- 106 -->
+<meta name="twitter:player" content="https://www.youtube.com/@M.TAQI-STUDIO">                        <!-- 107 -->
+<meta name="twitter:player:width" content="1280">                                                    <!-- 108 -->
+<meta name="twitter:player:height" content="720">                                                    <!-- 109 -->
+<meta name="twitter:app:name:iphone" content="M.TAQI-STUDIO">                                        <!-- 110 -->
 
-        .brand h1 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+<!-- ============ 111 – 125  :  GEO / DUBLIN CORE ============ -->
+<meta name="geo.region" content="PK">                                                                <!-- 111 -->
+<meta name="geo.placename" content="Pakistan">                                                       <!-- 112 -->
+<meta name="geo.position" content="30.3753;69.3451">                                                 <!-- 113 -->
+<meta name="ICBM" content="30.3753, 69.3451">                                                        <!-- 114 -->
+<meta name="DC.title" content="M.TAQI-STUDIO">                                                       <!-- 115 -->
+<meta name="DC.creator" content="Muhammad Taqi">                                                     <!-- 116 -->
+<meta name="DC.subject" content="AI, Web, Software, Game and App Development">                       <!-- 117 -->
+<meta name="DC.description" content="Official studio website of Muhammad Taqi.">                     <!-- 118 -->
+<meta name="DC.publisher" content="M.TAQI-STUDIO">                                                   <!-- 119 -->
+<meta name="DC.contributor" content="Muhammad Taqi">                                                 <!-- 120 -->
+<meta name="DC.date" content="2026-01-01">                                                           <!-- 121 -->
+<meta name="DC.type" content="Text">                                                                 <!-- 122 -->
+<meta name="DC.format" content="text/html">                                                          <!-- 123 -->
+<meta name="DC.language" content="en">                                                               <!-- 124 -->
+<meta name="DC.rights" content="Copyright M.TAQI-STUDIO">                                            <!-- 125 -->
 
-        .yt-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #ff0000;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-        }
+<!-- ============ 126 – 145  :  CLASSIFICATION ============ -->
+<meta name="rating" content="general">                                                               <!-- 126 -->
+<meta name="distribution" content="global">                                                          <!-- 127 -->
+<meta name="revisit-after" content="1 days">                                                         <!-- 128 -->
+<meta name="language" content="English">                                                             <!-- 129 -->
+<meta name="generator" content="M.TAQI-STUDIO / Handcrafted HTML5">                                  <!-- 130 -->
+<meta name="designer" content="Muhammad Taqi">                                                       <!-- 131 -->
+<meta name="reply-to" content="contact@mtaqi.studio">                                                <!-- 132 -->
+<meta name="owner" content="Muhammad Taqi">                                                          <!-- 133 -->
+<meta name="url" content="https://taqi.oneapp.dev">                                                  <!-- 134 -->
+<meta name="identifier-URL" content="https://taqi.oneapp.dev">                                       <!-- 135 -->
+<meta name="category" content="Technology, Development, Gaming, AI">                                 <!-- 136 -->
+<meta name="classification" content="Software Development Studio">                                   <!-- 137 -->
+<meta name="coverage" content="Worldwide">                                                           <!-- 138 -->
+<meta name="target" content="all">                                                                   <!-- 139 -->
+<meta name="audience" content="all">                                                                 <!-- 140 -->
+<meta name="page-topic" content="AI, Web, Game, Software Development">                               <!-- 141 -->
+<meta name="page-type" content="Portfolio">                                                          <!-- 142 -->
+<meta name="subject" content="M.TAQI-STUDIO Official Website">                                       <!-- 143 -->
+<meta name="abstract" content="Studio of Muhammad Taqi — AI, Web, Game, App &amp; Software.">          <!-- 144 -->
+<meta name="topic" content="Development Studio">                                                     <!-- 145 -->
 
-        .yt-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
-        }
+<!-- ============ 146 – 160  :  BUSINESS / OWNERSHIP ============ -->
+<meta name="contact" content="contact@mtaqi.studio">                                                 <!-- 146 -->
+<meta name="creator" content="Muhammad Taqi">                                                        <!-- 147 -->
+<meta name="publisher" content="M.TAQI-STUDIO">                                                      <!-- 148 -->
+<meta name="contributor" content="Muhammad Taqi">                                                    <!-- 149 -->
+<meta name="rights" content="All Rights Reserved">                                                   <!-- 150 -->
+<meta name="license" content="Copyright M.TAQI-STUDIO">                                              <!-- 151 -->
+<meta name="copyright" content="© 2026 M.TAQI-STUDIO — Muhammad Taqi">                               <!-- 152 -->
+<meta name="copyright-year" content="2026">                                                          <!-- 153 -->
+<meta name="company" content="M.TAQI-STUDIO">                                                        <!-- 154 -->
+<meta name="brand" content="M.TAQI-STUDIO">                                                          <!-- 155 -->
+<meta name="founder" content="Muhammad Taqi">                                                        <!-- 156 -->
+<meta name="founding-date" content="2023">                                                           <!-- 157 -->
+<meta name="founder-dob" content="2009-11-25">                                                       <!-- 158 -->
+<meta name="founder-nationality" content="Pakistani">                                                <!-- 159 -->
+<meta name="founder-email" content="contact@mtaqi.studio">                                           <!-- 160 -->
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+<!-- ============ 161 – 200  :  CUSTOM DATA TAGS ============ -->
+<meta name="youtube-channel-lyramoon" content="https://www.youtube.com/@LYRAMOON-STUDIO">             <!-- 161 -->
+<meta name="youtube-channel-avelia" content="https://www.youtube.com/@AVELIA.S">                      <!-- 162 -->
+<meta name="youtube-channel-mtaqi" content="https://www.youtube.com/@M.TAQI-STUDIO">                  <!-- 163 -->
+<meta name="youtube-channel-nexura" content="https://www.youtube.com/@NEXURA-M">                      <!-- 164 -->
+<meta name="facebook-profile" content="https://www.facebook.com/profile.php?id=61563069383023">       <!-- 165 -->
+<meta name="huggingface-mustjab-king" content="https://huggingface.co/MUSTJAB-KING">                  <!-- 166 -->
+<meta name="huggingface-muhammad-taqi512" content="https://huggingface.co/muhammad-taqi512">          <!-- 167 -->
+<meta name="huggingface-slora" content="https://huggingface.co/SLORA">                                <!-- 168 -->
+<meta name="website-lyramoon" content="https://lyramoon.pntr.dev">                                   <!-- 169 -->
+<meta name="website-avelia" content="https://avelia.oneapp.dev">                                     <!-- 170 -->
+<meta name="website-taqi" content="https://taqi.oneapp.dev">                                         <!-- 171 -->
+<meta name="service-web-development" content="Website creation, AI websites, game websites">          <!-- 172 -->
+<meta name="service-ai-development" content="AI models, AI tools, AI integration">                    <!-- 173 -->
+<meta name="service-game-development" content="2D games, stickman games, browser games">              <!-- 174 -->
+<meta name="service-software-development" content="Desktop &amp; web software development">            <!-- 175 -->
+<meta name="service-app-development" content="App development for web and mobile">                    <!-- 176 -->
+<meta name="service-software-comparison" content="Software comparison &amp; reviews">                   <!-- 177 -->
+<meta name="skill-ai" content="Artificial Intelligence Development">                                  <!-- 178 -->
+<meta name="skill-web" content="Web Development">                                                    <!-- 179 -->
+<meta name="skill-software" content="Software Development">                                          <!-- 180 -->
+<meta name="skill-game" content="Game Development">                                                  <!-- 181 -->
+<meta name="skill-app" content="App Development">                                                    <!-- 182 -->
+<meta name="lang-html" content="HTML5">                                                              <!-- 183 -->
+<meta name="lang-css" content="CSS3">                                                                <!-- 184 -->
+<meta name="lang-javascript" content="JavaScript">                                                   <!-- 185 -->
+<meta name="lang-json" content="JSON">                                                               <!-- 186 -->
+<meta name="lang-database" content="Databases / SQL">                                                <!-- 187 -->
+<meta name="lang-python" content="Python">                                                           <!-- 188 -->
+<meta name="lang-java" content="Java">                                                               <!-- 189 -->
+<meta name="lang-c" content="C">                                                                     <!-- 190 -->
+<meta name="lang-cpp" content="C++">                                                                 <!-- 191 -->
+<meta name="lang-csharp" content="C#">                                                               <!-- 192 -->
+<meta name="project-death-nova" content="DEATH NOVA — Game Project by M.TAQI-STUDIO">                <!-- 193 -->
+<meta name="genre-2d-games" content="2D Games">                                                      <!-- 194 -->
+<meta name="genre-stickman-games" content="Stickman Games">                                          <!-- 195 -->
+<meta name="logo" content="icon.png">                                                                <!-- 196 -->
+<meta name="icon" content="icon.png">                                                                <!-- 197 -->
+<meta name="favicon" content="icon.png">                                                             <!-- 198 -->
+<meta name="google-site-verification" content="REPLACE_WITH_YOUR_GOOGLE_CODE">                       <!-- 199 -->
+<meta name="msvalidate.01" content="REPLACE_WITH_YOUR_BING_CODE">                                    <!-- 200 -->
 
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(0, 242, 254, 0.1);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
+<title>M.TAQI-STUDIO — AI, Web, Game &amp; Software Development | Muhammad Taqi</title>
 
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+<!-- =====================  STYLES  ===================== -->
+<style>
+:root{
+  --bg:#05050a;
+  --card:rgba(255,255,255,.045);
+  --line:rgba(255,255,255,.09);
+  --txt:#eaeaf3;
+  --muted:#9a9ab5;
+  --p:#8b5cf6;
+  --c:#22d3ee;
+  --grad:linear-gradient(135deg,#8b5cf6 0%,#22d3ee 100%);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(700px 500px at 12% -5%, rgba(139,92,246,.20), transparent 60%),
+    radial-gradient(700px 500px at 88% 8%, rgba(34,211,238,.14), transparent 60%),
+    radial-gradient(900px 600px at 50% 110%, rgba(139,92,246,.10), transparent 60%);
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
 
-        /* Primary Action Button */
-        .main-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            color: #000;
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: 0.3s ease;
-            box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
-        }
+/* ---------- NAV ---------- */
+header{
+  position:sticky;top:0;z-index:99;
+  background:rgba(5,5,10,.72);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.5px}
+.logo img{
+  width:38px;height:38px;border-radius:11px;object-fit:cover;
+  border:1px solid var(--line);
+  box-shadow:0 0 18px rgba(139,92,246,.45);
+}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.02rem}
+.navlinks{display:flex;gap:6px;align-items:center}
+.navlinks a{
+  padding:8px 14px;border-radius:10px;font-size:.9rem;color:var(--muted);
+  transition:.25s;font-weight:500;
+}
+.navlinks a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.burger{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:10px;padding:8px 11px;font-size:1.1rem;cursor:pointer}
 
-        .main-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
-        }
+/* ---------- HERO ---------- */
+.hero{padding:96px 0 80px;text-align:center;position:relative}
+.hero .badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 16px;border-radius:999px;font-size:.78rem;letter-spacing:1.4px;
+  text-transform:uppercase;color:#c9c9ff;
+  border:1px solid rgba(139,92,246,.45);
+  background:rgba(139,92,246,.10);
+  margin-bottom:26px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#22d3ee;box-shadow:0 0 10px #22d3ee;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.hero h1{
+  font-size:clamp(2.3rem,6.4vw,4.6rem);
+  font-weight:900;letter-spacing:-1.5px;line-height:1.05;
+  background:linear-gradient(135deg,#fff 20%,#8b5cf6 55%,#22d3ee 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:16px;
+}
+.hero .sub{font-size:clamp(.95rem,2vw,1.18rem);color:var(--muted);max-width:720px;margin:0 auto 12px}
+.hero .by{font-size:.9rem;color:#7c7c9c;letter-spacing:.6px;margin-bottom:34px}
+.hero .by b{color:#22d3ee;font-weight:700}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  padding:13px 28px;border-radius:12px;font-weight:700;font-size:.94rem;
+  transition:.28s;display:inline-flex;align-items:center;gap:9px;border:1px solid transparent;
+}
+.btn.primary{background:var(--grad);color:#08080f;box-shadow:0 10px 34px rgba(139,92,246,.35)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(139,92,246,.55)}
+.btn.ghost{border-color:var(--line);background:rgba(255,255,255,.04);color:#e6e6f5}
+.btn.ghost:hover{background:rgba(255,255,255,.09);transform:translateY(-3px)}
 
-        /* Games Section */
-        .games-section {
-            padding: 40px 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
+/* ---------- SECTIONS ---------- */
+section{padding:74px 0}
+.sec-head{margin-bottom:44px;text-align:center}
+.sec-head h2{
+  font-size:clamp(1.55rem,3.6vw,2.35rem);font-weight:850;letter-spacing:-.7px;margin-bottom:10px;
+}
+.sec-head h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-head p{color:var(--muted);font-size:.95rem}
 
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+/* ---------- CARDS ---------- */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 22px;transition:.3s;position:relative;overflow:hidden;
+}
+.card::after{
+  content:"";position:absolute;inset:0;border-radius:var(--radius);
+  background:var(--grad);opacity:0;transition:.35s;pointer-events:none;z-index:-1;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55);background:rgba(139,92,246,.08)}
+.card .ico{
+  width:48px;height:48px;border-radius:13px;display:grid;place-items:center;
+  font-size:1.35rem;margin-bottom:16px;
+  background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.32);
+}
+.card h3{font-size:1.03rem;font-weight:750;margin-bottom:7px}
+.card p{font-size:.88rem;color:var(--muted)}
+.card .tag{
+  display:inline-block;margin-top:14px;font-size:.74rem;letter-spacing:1.1px;
+  text-transform:uppercase;color:#22d3ee;font-weight:700;
+}
 
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+/* ---------- LINK CARDS ---------- */
+.linkcard{
+  display:flex;align-items:center;gap:15px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;transition:.28s;
+}
+.linkcard:hover{transform:translateX(6px);border-color:rgba(34,211,238,.55);background:rgba(34,211,238,.07)}
+.linkcard .li{
+  width:42px;height:42px;flex:0 0 42px;border-radius:11px;display:grid;place-items:center;
+  font-size:1.1rem;background:rgba(255,255,255,.06);border:1px solid var(--line);
+}
+.linkcard .lt{font-weight:700;font-size:.93rem;line-height:1.3}
+.linkcard .ls{font-size:.76rem;color:var(--muted);word-break:break-all}
+.linkcard .arrow{margin-left:auto;color:var(--muted);font-size:1.1rem;transition:.25s}
+.linkcard:hover .arrow{color:#22d3ee;transform:translateX(4px)}
 
-        .game-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            transition: 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+/* ---------- CHIPS ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{
+  padding:9px 18px;border-radius:999px;font-size:.85rem;font-weight:600;
+  border:1px solid var(--line);background:rgba(255,255,255,.04);
+  transition:.25s;cursor:default;
+}
+.chip:hover{border-color:rgba(139,92,246,.6);background:rgba(139,92,246,.14);transform:translateY(-3px);color:#fff}
 
-        .game-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
+/* ---------- PROJECT ---------- */
+.project{
+  background:linear-gradient(135deg,rgba(139,92,246,.16),rgba(34,211,238,.09));
+  border:1px solid rgba(139,92,246,.4);border-radius:24px;
+  padding:46px 32px;text-align:center;position:relative;overflow:hidden;
+}
+.project::before{
+  content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.28),transparent 70%);
+  top:-140px;right:-100px;filter:blur(30px);
+}
+.project h3{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;letter-spacing:2px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.project p{color:#b9b9d4;max-width:620px;margin:0 auto 24px;font-size:.95rem}
+.project .pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.project .pills span{font-size:.76rem;letter-spacing:1.2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25)}
 
-        .game-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #ff4757;
-            color: white;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 10px;
-            font-weight: 600;
-        }
+/* ---------- ABOUT ---------- */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.about .card{display:flex;flex-direction:column;justify-content:center}
+.about .row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:.9rem}
+.about .row:last-child{border:none}
+.about .row span:first-child{color:var(--muted)}
+.about .row span:last-child{font-weight:700;text-align:right}
 
-        .game-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0 34px;margin-top:40px;text-align:center}
+footer .flogo{font-weight:900;letter-spacing:2px;font-size:1.05rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
+footer p{font-size:.84rem;color:#77779a;margin-bottom:6px}
+footer .fmeta{font-size:.76rem;color:#55556e;margin-top:14px}
 
-        .game-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
 
-        .game-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .download-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: var(--primary);
-            color: #000;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 25px;
-            border-top: 1px solid var(--border-color);
-            background: rgba(13, 15, 24, 0.9);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 50px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 5%;
-            }
-            .hero h2 {
-                font-size: 2rem;
-            }
-            .brand h1 {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:860px){
+  .about{grid-template-columns:1fr}
+  .navlinks{
+    position:fixed;top:70px;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:4px;
+    background:rgba(8,8,16,.97);backdrop-filter:blur(20px);
+    padding:14px;border-bottom:1px solid var(--line);
+    transform:translateY(-130%);transition:.35s;
+  }
+  .navlinks.open{transform:translateY(0)}
+  .navlinks a{padding:12px 14px;font-size:.95rem}
+  .burger{display:block}
+  .hero{padding:66px 0 56px}
+  section{padding:56px 0}
+}
+</style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header>
-        <div class="brand">
-            <img src="https://yt3.ggpht.com/6NkGrylqLe2FAxYaq-VQ1vBP_z0FwDAK9RMJ0Bql13mJur1H8yfBxvF3TXs0Jr0GLv4p839qC_wN=s258-c-fcrop64=1,00000000ffffffff-rw-nd-v1" alt="M.TAQI STUDIO Logo">
-            <h1>M.TAQI STUDIO</h1>
+<!-- =====================  NAV  ===================== -->
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="logo">
+        <img src="icon.png" alt="M.TAQI-STUDIO logo">
+        <span>M.TAQI-STUDIO</span>
+      </a>
+      <div class="navlinks" id="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#languages">Languages</a>
+        <a href="#channels">YouTube</a>
+        <a href="#websites">Websites</a>
+        <a href="#project">Project</a>
+        <a href="#connect">Connect</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<!-- =====================  HERO  ===================== -->
+<div id="top" class="hero">
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span> Official Studio Website</div>
+    <h1>M.TAQI-STUDIO</h1>
+    <p class="sub">AI • Web • Software • Game • App Development</p>
+    <p class="by">CREATED BY <b>MUHAMMAD TAQI</b></p>
+    <div class="btns">
+      <a class="btn primary" href="#websites">🚀 Explore Websites</a>
+      <a class="btn ghost" href="https://www.youtube.com/@M.TAQI-STUDIO" target="_blank" rel="noopener">▶ YouTube Channel</a>
+    </div>
+  </div>
+</div>
+
+<!-- =====================  ABOUT  ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>About <em>The Studio</em></h2>
+      <p>Building AI, websites, software, apps and games — from Pakistan to the world.</p>
+    </div>
+    <div class="about">
+      <div class="card reveal">
+        <h3 style="margin-bottom:14px">👋 Who We Are</h3>
+        <p>
+          <b>M.TAQI-STUDIO</b> is the creative development studio of <b>Muhammad Taqi</b>.
+          We build AI tools, modern websites, complete software, mobile apps and
+          2D / stickman games. We also publish software comparisons and reviews.
+        </p>
+        <p style="margin-top:12px">
+          Everything here — design, code and ideas — is crafted by Muhammad Taqi.
+        </p>
+        <div class="chips" style="justify-content:flex-start;margin-top:20px">
+          <span class="chip">AI</span>
+          <span class="chip">Web</span>
+          <span class="chip">Software</span>
+          <span class="chip">Game</span>
+          <span class="chip">App</span>
         </div>
-        <a href="https://www.youtube.com/@M.TAQI-STUDIO" target="_blank" class="yt-btn">
-            <i class="fab fa-youtube"></i> YouTube
-        </a>
-    </header>
+      </div>
+      <div class="card reveal">
+        <div class="row"><span>Studio Name</span><span>M.TAQI-STUDIO</span></div>
+        <div class="row"><span>Created By</span><span>Muhammad Taqi</span></div>
+        <div class="row"><span>Date of Birth</span><span>25 November 2009</span></div>
+        <div class="row"><span>Country</span><span>Pakistan 🇵🇰</span></div>
+        <div class="row"><span>Main Project</span><span>DEATH NOVA</span></div>
+        <div class="row"><span>Status</span><span style="color:#22d3ee">Active ✔</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <span class="hero-badge"><i class="fas fa-gamepad"></i> Official Game Studio</span>
-        <h2>Next-Level Stickman Games & Entertainment</h2>
-        <p>Is web ki team stickman games banati hai! Latest games aur naye projects download karne ke liye neeche button par click karein.</p>
-        
-        <a href="https://sites.google.com/view/nexura-app-store/m-taqi-studio" target="_blank" class="main-btn">
-            <i class="fas fa-external-link-alt"></i> M.TAQI STUDIO
-        </a>
-    </section>
+<!-- =====================  SKILLS  ===================== -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Our <em>Skills</em></h2>
+      <p>Five core areas of development — all under one studio.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="ico">🤖</div><h3>AI Development</h3><p>AI models, AI tools, chatbots and AI-powered websites &amp; apps.</p><span class="tag">Artificial Intelligence</span></div>
+      <div class="card reveal"><div class="ico">🌐</div><h3>Web Development</h3><p>Fast, responsive, modern websites built with clean HTML, CSS &amp; JS.</p><span class="tag">Websites</span></div>
+      <div class="card reveal"><div class="ico">💻</div><h3>Software Development</h3><p>Desktop &amp; web software, tools and utilities — plus software comparison.</p><span class="tag">Software</span></div>
+      <div class="card reveal"><div class="ico">🎮</div><h3>Game Development</h3><p>2D games and stickman games, playable in the browser.</p><span class="tag">Games</span></div>
+      <div class="card reveal"><div class="ico">📱</div><h3>App Development</h3><p>App experiences for web and mobile with smooth, clean UI.</p><span class="tag">Apps</span></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Games Showcase -->
-    <section class="games-section">
-        <h2 class="section-title"><i class="fas fa-fire"></i> Our Games</h2>
-        <div class="games-grid">
-            
-            <!-- Game Card 1: Latest Release -->
-            <div class="game-card">
-                <span class="game-tag">LATEST</span>
-                <div class="game-icon">
-                    <i class="fas fa-ghost"></i>
-                </div>
-                <h3>Stickman Horror Night</h3>
-                <p>Ek thrilling aur scary stickman survival game. Night mode ke sath horror challenges ka samna karein!</p>
-                <a href="https://github.com/muhammadtaqi512q-oss/JAVIS-AI-2/releases/download/v1.0.0/Stickman.Horror.Night.apk" target="_blank" class="download-btn">
-                    <i class="fas fa-download"></i> Download Game
-                </a>
-            </div>
+<!-- =====================  LANGUAGES  ===================== -->
+<section id="languages">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Programming <em>Languages</em></h2>
+      <p>The languages and technologies powering every M.TAQI-STUDIO build.</p>
+    </div>
+    <div class="chips reveal">
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">JSON</span>
+      <span class="chip">Database</span>
+      <span class="chip">Python</span>
+      <span class="chip">Java</span>
+      <span class="chip">C</span>
+      <span class="chip">C++</span>
+      <span class="chip">C#</span>
+    </div>
+  </div>
+</section>
 
-            <!-- Game Card 2: Store Access -->
-            <div class="game-card">
-                <div class="game-icon">
-                    <i class="fas fa-cubes"></i>
-                </div>
-                <h3>More Stickman Games</h3>
-                <p>Aur koi si bhi games download karne ke liye M.TAQI STUDIO store visit karein aur latest releases check karein.</p>
-                <a href="https://sites.google.com/view/nexura-app-store/m-taqi-studio" target="_blank" class="download-btn">
-                    <i class="fas fa-store"></i> Visit Store
-                </a>
-            </div>
+<!-- =====================  YOUTUBE  ===================== -->
+<section id="channels">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>YouTube <em>Channels</em></h2>
+      <p>Subscribe to all four official channels.</p>
+    </div>
+    <div class="grid g2">
+      <a class="linkcard reveal" href="https://www.youtube.com/@LYRAMOON-STUDIO" target="_blank" rel="noopener">
+        <div class="li">▶</div>
+        <div><div class="lt">LYRAMOON-STUDIO</div><div class="ls">youtube.com/@LYRAMOON-STUDIO</div></div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="linkcard reveal" href="https://www.youtube.com/@AVELIA.S" target="_blank" rel="noopener">
+        <div class="li">▶</div>
+        <div><div class="lt">AVELIA.S</div><div class="ls">youtube.com/@AVELIA.S</div></div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="linkcard reveal" href="https://www.youtube.com/@M.TAQI-STUDIO" target="_blank" rel="noopener">
+        <div class="li">▶</div>
+        <div><div class="lt">M.TAQI-STUDIO</div><div class="ls">youtube.com/@M.TAQI-STUDIO</div></div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="linkcard reveal" href="https://www.youtube.com/@NEXURA-M" target="_blank" rel="noopener">
+        <div class="li">▶</div>
+        <div><div class="lt">NEXURA-M</div><div class="ls">youtube.com/@NEXURA-M</div></div>
+        <div class="arrow">↗</div>
+      </a>
+    </div>
+  </div>
+</section>
 
-        </div>
-    </section>
+<!-- =====================  WEBSITES  ===================== -->
+<section id="websites">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Our <em>Websites</em></h2>
+      <p>Create websites, AI, games, software — and compare software, all in one place.</p>
+    </div>
+    <div class="grid g3">
+      <a class="linkcard reveal" href="https://lyramoon.pntr.dev" target="_blank" rel="noopener" style="flex-direction:column;align-items:flex-start;gap:10px">
+        <div class="li" style="margin-bottom:4px">🌙</div>
+        <div><div class="lt">LYRAMOON</div><div class="ls">lyramoon.pntr.dev</div></div>
+        <span class="tag" style="margin:0;color:#22d3ee;font-size:.72rem;letter-spacing:1.1px">WEBS • AI • GAMES</span>
+      </a>
+      <a class="linkcard reveal" href="https://avelia.oneapp.dev" target="_blank" rel="noopener" style="flex-direction:column;align-items:flex-start;gap:10px">
+        <div class="li" style="margin-bottom:4px">✨</div>
+        <div><div class="lt">AVELIA</div><div class="ls">avelia.oneapp.dev</div></div>
+        <span class="tag" style="margin:0;color:#22d3ee;font-size:.72rem;letter-spacing:1.1px">SOFTWARE • TOOLS</span>
+      </a>
+      <a class="linkcard reveal" href="https://taqi.oneapp.dev" target="_blank" rel="noopener" style="flex-direction:column;align-items:flex-start;gap:10px">
+        <div class="li" style="margin-bottom:4px">⚡</div>
+        <div><div class="lt">WEB TAQI</div><div class="ls">taqi.oneapp.dev</div></div>
+        <span class="tag" style="margin:0;color:#22d3ee;font-size:.72rem;letter-spacing:1.1px">MAIN STUDIO HUB</span>
+      </a>
+    </div>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card reveal"><div class="ico">🛠️</div><h3>Create</h3><p>Websites, AI tools, games, software and apps — built to order.</p></div>
+      <div class="card reveal"><div class="ico">⚖️</div><h3>Compare</h3><p>Compare software side by side before you choose.</p></div>
+      <div class="card reveal"><div class="ico">🕹️</div><h3>Play</h3><p>2D games and stickman games directly in your browser.</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>CREATED BY MUHAMMAD TAQI</p>
-        <p style="margin-top: 5px; font-size: 0.8rem;">&copy; 2026 M.TAQI STUDIO. All rights reserved.</p>
-    </footer>
+<!-- =====================  PROJECT  ===================== -->
+<section id="project">
+  <div class="wrap">
+    <div class="project reveal">
+      <h3>DEATH NOVA</h3>
+      <p>A flagship game project from M.TAQI-STUDIO — built with 2D and stickman game mechanics, crafted for fast, addictive browser gameplay.</p>
+      <div class="pills">
+        <span>2D Games</span>
+        <span>Stickman Games</span>
+        <span>Game Dev</span>
+      </div>
+      <a class="btn primary" href="https://www.youtube.com/@M.TAQI-STUDIO" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </div>
+  </div>
+</section>
 
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"e3c1c9af36de41759418005494a48906","r":1,"spa":2}' crossorigin="anonymous"></script>
+<!-- =====================  CONNECT  ===================== -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Connect <em>With Us</em></h2>
+      <p>Facebook, Hugging Face and every official channel.</p>
+    </div>
+    <div class="grid g2">
+      <a class="linkcard reveal" href="https://www.facebook.com/profile.php?id=61563069383023" target="_blank" rel="noopener">
+        <div class="li">f</div>
+        <div><div class="lt">Facebook</div><div class="ls">profile.php?id=61563069383023</div></div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="linkcard reveal" href="https://huggingface.co/MUSTJAB-KING" target="_blank" rel="noopener">
+        <div class="li">🤗</div>
+        <div><div class="lt">Hugging Face — MUSTJAB-KING</div><div class="ls">huggingface.co/MUSTJAB-KING</div></div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="linkcard reveal" href="https://huggingface.co/muhammad-taqi512" target="_blank" rel="noopener">
+        <div class="li">🤗</div>
+        <div><div class="lt">Hugging Face — muhammad-taqi512</div><div class="ls">huggingface.co/muhammad-taqi512</div></div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="linkcard reveal" href="https://huggingface.co/SLORA" target="_blank" rel="noopener">
+        <div class="li">🤗</div>
+        <div><div class="lt">Hugging Face — SLORA</div><div class="ls">huggingface.co/SLORA</div></div>
+        <div class="arrow">↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =====================  FOOTER  ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="flogo">M.TAQI-STUDIO</div>
+    <p>Created by <b style="color:#22d3ee">MUHAMMAD TAQI</b> • Born 25 November 2009</p>
+    <p>AI • Web • Software • Game • App Development</p>
+    <p class="fmeta">© <span id="year">2026</span> M.TAQI-STUDIO — All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- =====================  STRUCTURED DATA  ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muhammad Taqi",
+  "alternateName": "M.TAQI-STUDIO",
+  "url": "https://taqi.oneapp.dev",
+  "image": "https://taqi.oneapp.dev/icon.png",
+  "birthDate": "2009-11-25",
+  "nationality": "Pakistani",
+  "jobTitle": "Developer & Studio Founder",
+  "knowsAbout": ["Artificial Intelligence","Web Development","Software Development","Game Development","App Development"],
+  "knowsLanguage": ["HTML","CSS","JavaScript","JSON","SQL","Python","Java","C","C++","C#"],
+  "sameAs": [
+    "https://www.youtube.com/@LYRAMOON-STUDIO",
+    "https://www.youtube.com/@AVELIA.S",
+    "https://www.youtube.com/@M.TAQI-STUDIO",
+    "https://www.youtube.com/@NEXURA-M",
+    "https://www.facebook.com/profile.php?id=61563069383023",
+    "https://huggingface.co/MUSTJAB-KING",
+    "https://huggingface.co/muhammad-taqi512",
+    "https://huggingface.co/SLORA",
+    "https://lyramoon.pntr.dev",
+    "https://avelia.oneapp.dev",
+    "https://taqi.oneapp.dev"
+  ]
+}
+</script>
+
+<!-- =====================  SCRIPT  ===================== -->
+<script>
+(function () {
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var links  = document.getElementById('navlinks');
+  burger.addEventListener('click', function () {
+    links.classList.toggle('open');
+    burger.textContent = links.classList.contains('open') ? '✕' : '☰';
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      burger.textContent = '☰';
+    });
+  });
+
+  // Scroll reveal
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(function (el, i) {
+    el.style.transitionDelay = (i % 6) * 60 + 'ms';
+    io.observe(el);
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+
 </body>
 </html>
